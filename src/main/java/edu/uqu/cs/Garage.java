@@ -9,7 +9,7 @@ package edu.uqu.cs;
 */
 import java.util.Scanner;
 
-public class Garage{
+public class Garage {
 
     /************ Part 1 **************/
     /**
@@ -40,19 +40,20 @@ public class Garage{
      * Use loop to create them as follows:
      * Syntax:
      * public className (){
-     * 	   for(int i=0; i<arrayName.length; i++){
-     *         arrayName[i]= new arrayClassName();
-     *     }
-     *}
+     * for(int i=0; i<arrayName.length; i++){
+     * arrayName[i]= new arrayClassName();
+     * }
+     * }
      */
 
     /************ Part 4 **************/
     /**
-     * Define addCar(String parameter) that adds a new car (by model) to the garage 
-     * and set its flag to true; 
-     * hint: you must check if the car has not been added before to the list of cars 
-     * and it should be added to the car list by using the static variable countCars! 
-     * also, change the status of the instance variable inOutGarage to true 
+     * Define addCar(String parameter) that adds a new car (by model) to the garage
+     * and set its flag to true;
+     * hint: you must check if the car has not been added before to the list of cars
+     * and it should be added to the car list by using the static variable
+     * countCars!
+     * also, change the status of the instance variable inOutGarage to true
      * by calling method moveCarIn() of class Car
      * Don’t forget to increase countCars’s value by one
      * Note: method returns NO data
@@ -60,11 +61,10 @@ public class Garage{
      * public void methodName(String m)
      */
 
-
     /************ Part 5 **************/
     /**
-     * Define moveOut(String) that moves the car (by model) out of the garage; 
-     * hint you must first search if the car is in the list of cars, 
+     * Define moveOut(String) that moves the car (by model) out of the garage;
+     * hint you must first search if the car is in the list of cars,
      * then use moveCarOut () method of class Car
      * Note: method returns NO data
      * Syntax:
@@ -72,19 +72,16 @@ public class Garage{
      *
      */
 
-
-
     /************ Part 6 **************/
     /**
-     * Define moveOut(String) that moves the car (by model) into the garage; 
-     * hint you must first search if the car is in the list of cars, 
+     * Define moveOut(String) that moves the car (by model) into the garage;
+     * hint you must first search if the car is in the list of cars,
      * then use moveCarIn () method of class Car;
      * Note: method returns NO data
      * Syntax:
      * public void methodName(String m)
      *
      */
-
 
     /************ Part 7 **************/
     /**
@@ -96,6 +93,66 @@ public class Garage{
      *
      */
 
+    public static int countCars = 0;
+    private Car[] allcars;
 
+    public Garage() {
+        allcars = new Car[3];
+    }
 
+    public void addCar(String model) {
+        boolean found = false;
+        for (int i = 0; i < countCars; i++) {
+            if (allcars[i].getModel().equals(model)) {
+                found = true;
+                allcars[i].moveCarIn();
+            }
+        }
+        if (!found) {
+            if (countCars < allcars.length) {
+                Car c = new Car();
+                c.setModel(model);
+                allcars[countCars] = c;
+
+                allcars[countCars].moveCarIn();
+                countCars++;
+
+            } else {
+                System.out.println("Full garage");
+            }
+        }
+    }
+
+    public void moveOut(String model) {
+
+        for (int i = 0; i < countCars; i++) {
+            if (allcars[i].getModel().equals(model)) {
+
+                allcars[i].moveCarOut();
+            }
+        }
+
+    }
+
+    public void moveIn(String model) {
+
+        for (int i = 0; i < countCars; i++) {
+            if (allcars[i].getModel().equals(model)) {
+
+                allcars[i].moveCarIn();
+            }
+        }
+
+    }
+
+    public void listCars() {
+        System.out.println("All cars in the Garage are :");
+        for (int i = 0; i < countCars; i++) {
+            if (allcars[i].getFlag())
+                System.out.println("car " + (i + 1) + ": " + allcars[i].getModel());
+
+        }
+        System.out.println();
+
+    }
 }
