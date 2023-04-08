@@ -9,11 +9,11 @@ package edu.uqu.cs;
 */
 import java.util.Scanner;
 
-public class Car{
+public class Car {
 
     /************ Part 1 **************/
     /**
-     * Decalre all instance variables 
+     * Decalre all instance variables
      * model of type String
      * inOutGarage of type boolean
      * Make sure they are all private
@@ -24,13 +24,13 @@ public class Car{
 
     /************ Part 2 **************/
     /**
-     * Define a default constructor and set 
+     * Define a default constructor and set
      * all instance variables to their default values
      * model ="";
      * inOutGarage =false;
      * Syntax:
      * public className (){
-     *      //body
+     * //body
      * }
      */
 
@@ -40,21 +40,19 @@ public class Car{
      * for each instance variable
      * Syntax:
      * public dataType getInstanceVariableName (){
-     *      return this.InstanceVariableName;
+     * return this.InstanceVariableName;
      * }
      */
-
 
     /************ Part 4 **************/
     /**
      * Define all setter methods below
      * for each instance variable
      * public void setInstanceVariableName (parameter){
-     *      this.InstanceVariableName= parameter;
+     * this.InstanceVariableName= parameter;
      * }
      *
      */
-
 
     /************ Part 5 **************/
     /**
@@ -64,6 +62,39 @@ public class Car{
      *
      */
 
+    private String model;
+    private boolean flag;
 
+    public Car() {
+        flag = false;
+        model = "";
+    }
+
+    
+    public void moveCarOut() {
+        flag = false;
+
+    }
+
+    public void moveCarIn() {
+        flag = true;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    
+    public void setModel(String m) {
+        model = m;
+    }
+
+    public boolean getFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
 }

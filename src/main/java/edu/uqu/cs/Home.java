@@ -9,32 +9,39 @@ package edu.uqu.cs;
 */
 import java.util.Scanner;
 
-public class Home{
-	public static void main(String [] args){
+public class Home {
+        public static void main(String[] args) {
 
-		// Create an object of type Garage 
-                //HERE
+                // Create an object of type Garage
+                // HERE
 
+                // Add "Toyota Corolla Cross" in the garage. Hint: use method addCar () of class
+                // Garage
+                // HERE
 
-	        // Add "Toyota Corolla Cross" in the garage. Hint: use method addCar () of class Garage
-                //HERE
-
-                //List all the cars in the garage. Hint: use method listCars () of class Garage
-                //HERE
+                // List all the cars in the garage. Hint: use method listCars () of class Garage
+                // HERE
 
                 // Place "Ford Fusion" in the garage. Hint: use method addCar () of class Garage
-                //HERE
+                // HERE
 
- 	        // List all the cars in the garage once again. Hint: use method listCars () of class Garage
-                //HERE
+                // List all the cars in the garage once again. Hint: use method listCars () of
+                // class Garage
+                // HERE
 
+                // Move out "Ford Fusion" from the garage. Hint: use method moveOut () of class
+                // Garage
+                // HERE
 
-               // Move out "Ford Fusion" from the garage. Hint: use method moveOut () of class Garage
-               //HERE
-
-
-               // List all the cars in the garage. Hint: use method listCars () of class Garage
-               //HERE
+                // List all the cars in the garage. Hint: use method listCars () of class Garage
+                // HERE
+                Garage G = new Garage();
+                G.addCar("Toyota Corolla Cross");
+                G.listCars();
+                G.addCar("Ford Fusion");
+                G.listCars();
+                G.moveOut("Ford Fusion");
+                G.listCars();
 
         }
 
